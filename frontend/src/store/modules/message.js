@@ -55,7 +55,7 @@ const message = {
       console.log(messageInfo)
       let id = messageInfo.id;
       delete messageInfo.add_time; 
-      instance.put("http://127.0.0.1:8000/messages/1/", messageInfo)
+      instance.put("http://127.0.0.1:8000/messages/"+ id + "/", messageInfo)
       .then((response) => {
         console.log("resp", response.data)
       })

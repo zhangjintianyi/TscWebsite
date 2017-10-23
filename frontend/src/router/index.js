@@ -8,6 +8,7 @@ import UserInfo from '@/components/UserInfo';
 import Login from '@/components/Login';
 import Message from '@/components/Message';
 import MessageInfo from '@/components/MessageInfo';
+import MessagePublish from '@/components/MessagePublish';
 import AppMain from '@/components/AppMain';
 import store from '@/store'
 
@@ -52,7 +53,12 @@ const router = new Router({
           path: 'message/info',
           name: 'MessageInfo',
           component: MessageInfo,
-        }
+        },
+        {
+          path: 'message/publish',
+          name: 'MessagePublish',
+          component: MessagePublish,
+        },
       ]
     },
     {
