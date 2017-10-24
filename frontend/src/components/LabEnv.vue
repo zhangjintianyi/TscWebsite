@@ -46,7 +46,7 @@ export default {
     },
 
     _getMSOTSCInfo() {
-      axios.get("http://localhost:8000/mso")
+      axios.get("http://localhost:8000/api/v1/mso")
         .then(res => {
           this._loadTreeData(res.data.results)
         })

@@ -70,7 +70,7 @@ export default {
         },
         publishMessage() {
             this.form.writer = this.$store.getters.jobNum;
-            instance.post("http://127.0.0.1:8000/messages/", this.form);
+            instance.post("http://127.0.0.1:8000/api/v1/messages/", this.form);
             this.$router.push("/message");
         }
     },

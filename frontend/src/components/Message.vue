@@ -62,7 +62,7 @@ export default {
   },
   methods: {
     getCurrentPageMessage() {
-      instance.get("http://127.0.0.1:8000/messages/?page=" + this.currentPage).then(rep => {
+      instance.get("http://127.0.0.1:8000/api/v1/messages/?page=" + this.currentPage).then(rep => {
         const result = rep.data.results;
         this.count = rep.data.count;
         console.log(rep.data.results);
@@ -105,7 +105,7 @@ export default {
       let pageCount = this.count / 5;
       console.log("pageCount", pageCount)
       while (page <= 20) {
-        instance.get("http://127.0.0.1:8000/messages/?page=" + page).then(rep => {
+        instance.get("http://127.0.0.1:8000/api/v1/messages/?page=" + page).then(rep => {
           this.last100Messages.push(...rep.data.results);
         });
         page++;

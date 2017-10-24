@@ -58,7 +58,7 @@ const user = {
         password: `${password}`
       };
       return new Promise((resolve, reject) => {
-        axios.post("http://127.0.0.1:8000/users/", params)
+        axios.post("http://127.0.0.1:8000/api/v1/users/", params)
           .then((response) => {
             console.log("response", response);
             const data = response.data;
@@ -92,7 +92,7 @@ const user = {
         mobile: `${mobile}`,
         phone: `${phone}`,
       };
-      instance.patch("http://127.0.0.1:8000/users/user-detail/", params)
+      instance.patch("http://127.0.0.1:8000/api/v1/users/user-detail/", params)
         .then((response) => {
           console.log("response", response);
           const data = response.data;
@@ -111,7 +111,7 @@ const user = {
     getUserInfo({
       commit
     }, jobNum) {
-      instance.get("http://127.0.0.1:8000/users/" + jobNum)
+      instance.get("http://127.0.0.1:8000/api/v1/users/" + jobNum)
         .then((response) => {
           console.log("response1111111", response);
           const data = response.data;
@@ -128,7 +128,7 @@ const user = {
     },
 
     getAllUserInfo({commit}) {
-      return instance.get("http://127.0.0.1:8000/users/");
+      return instance.get("http://127.0.0.1:8000/api/v1/users/");
     }
 
 

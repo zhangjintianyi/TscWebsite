@@ -93,7 +93,7 @@ export default {
             }
         },
         _getEnvInfo() {
-            axios.get("http://localhost:8000/mso")
+            axios.get("http://localhost:8000/api/v1/mso")
                 .then(res => {
                     let tableData = [];
                     res.data.results.forEach(function(element) {

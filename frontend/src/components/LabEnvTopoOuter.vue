@@ -28,7 +28,7 @@ export default {
     },
     methods: {
         _getMSOTSCInfo() {
-            axios.get("http://localhost:8000/mso")
+            axios.get("http://localhost:8000/api/v1/mso")
                 .then(res => {
                     this.info_list = res.data.results;
                     this.currentInfo = this.info_list[0];
