@@ -24,6 +24,7 @@ from backend.extra_apps import xadmin
 from backend.apps.tsc.views import MSOViewSet, TSCViewSet, DBSViewSet
 from backend.apps.users.views import UserViewSet, FileUploadView
 from backend.apps.message.views import MessageViewSet
+from TscWebsite.settings import STATIC_ROOT
 
 router = DefaultRouter()
 router.register(r"mso", MSOViewSet, base_name="mso")
@@ -36,11 +37,12 @@ urlpatterns = [
     url(r'^xadmin/', xadmin.site.urls),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     # url(r'^upload/(?P<path>.*)$', serve, {"document_root": MEDIA_ROOT}),
-   url(r'^upload/avatar/(?P<filename>[^/]+)$', FileUploadView.as_view()),
+    url(r'^upload/avatar/(?P<filename>[^/]+)$', FileUploadView.as_view()),
     url(r'^api/v1/', include(router.urls)),
 
     # drf自带的token认证模式
     url(r'^api-token-auth/', views.obtain_auth_token),
 
     url(r'^$', TemplateView.as_view(template_name="index.html")),
+    url(r'^static/(?P<path>.*)$', serve, {'document_root': STATIC_ROOT}),
 ]

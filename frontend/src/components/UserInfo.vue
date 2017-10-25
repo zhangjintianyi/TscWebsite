@@ -56,7 +56,7 @@ export default {
         beforeAvatarUpload(file) {
             const isJPG = file.type === 'image/jpeg';
             const isLt2M = file.size / 1024 / 1024 < 2;
-            this.action = "http://127.0.0.1:8000/api/v1/upload/avatar/" + file.name;
+            this.action = "http://192.168.69.110/api/v1/upload/avatar/" + file.name;
             if (this.$store.getters.token) {
                 this.headers['Authorization'] = "JWT " + this.$store.getters.token;
             }

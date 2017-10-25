@@ -12,7 +12,7 @@
             <ul>
                 <li v-for="msoData in tableData">
                     <div class="mso">
-                        <el-popover ref="popover1" placement="right" :title="'IP: '+ msoData[0].ip" width="200" trigger="click" 
+                        <el-popover ref="popover1" placement="right" :title="'IP: '+ msoData[0].ip" width="200" trigger="click"
                         :content="'版本： '+msoData[0].version + ' '+ '负责人： '+msoData[0].principal">
                             <el-button slot="reference" class="mso-btn">MSO: {{msoData[0].ip}}</el-button>
                         </el-popover>
@@ -93,7 +93,7 @@ export default {
             }
         },
         _getEnvInfo() {
-            axios.get("http://localhost:8000/api/v1/mso")
+            axios.get("http://192.168.69.110/api/v1/mso/")
                 .then(res => {
                     let tableData = [];
                     res.data.results.forEach(function(element) {

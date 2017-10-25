@@ -7,7 +7,7 @@ import {
 import store from '@/store';
 
 var instance = axios.create({
-  baseURL: "http://127.0.0.1:8000/api/v1/",
+  baseURL: "http://192.168.69.110/api/v1/",
   timeout: 5000,
 });
 

@@ -50,7 +50,7 @@ INSTALLED_APPS = [
     'backend.apps.tsc',
     'rest_framework.authtoken',  # JWT要用这个app
     'backend.apps.message',
-    'backend.apps.users.apps.UsersConfig'
+    'backend.apps.users.apps.UsersConfig',
 ]
 
 MIDDLEWARE = [
@@ -87,13 +87,13 @@ WSGI_APPLICATION = 'TscWebsite.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
-DATABASE_URL = "192.168.223.130"
+DATABASE_URL = "127.0.0.1"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': "TscWebsite",
         'USER': 'root',
-        'PASSWORD': "root",
+        'PASSWORD': "",
         'HOST': DATABASE_URL,
         'OPTIONS': {
             'init_command': 'SET default_storage_engine=INNODB',
@@ -142,6 +142,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "backend/upload")
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "frontend/dist/static"),
 ]
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
+print(STATIC_ROOT)
 
 # Add for CORS_ORIGIN
 CORS_ORIGIN_ALLOW_ALL = True
@@ -178,4 +180,4 @@ AUTHENTICATION_BACKENDS = (
     'backend.apps.users.views.CustomBackend',
 )
 
-FILE_UPLOAD_MAX_MEMORY_SIZE: 0
+#FILE_UPLOAD_MAX_MEMORY_SIZE: 0
